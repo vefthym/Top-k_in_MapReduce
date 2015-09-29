@@ -1,0 +1,71 @@
+Multi(4)-thread (289,036,431 input):
+
+top100Kbaseline:
+real	8m46.104s
+user	24m31.248s
+sys	0m11.613s
+1.4MB
+
+top1Mbaseline:
+real	11m50.962s
+user	23m25.412s
+sys	0m17.681s
+
+top10Mbaseline:
+real	8m56.845s
+user	24m46.473s
+sys	0m12.481s
+
+
+Single-thread (289,036,431 input):
+top1Mbaseline (singleThread):
+real	25m4.978s
+user	23m51.945s
+sys	0m9.161s
+space:13.9MB
+
+top10Mbaseline (singleThread):
+real	24m42.365s
+user	23m40.617s
+sys	0m9.913s
+space:129MB
+
+top50Mbaseline (singleThread):
+real	25m21.783s
+user	24m27.712s
+sys	0m11.321s
+space:634MB
+
+top100Mbaseline (singleThread):
+real	25m37.462s
+user	24m29.700s
+sys	0m13.257s
+space:1.3GB
+
+
+
+
+Real is wall clock time - time from start to finish of the call. This is all elapsed time including time slices used by other processes and time the process spends blocked (for example if it is waiting for I/O to complete).
+
+User is the amount of CPU time spent in user-mode code (outside the kernel) within the process. This is only actual CPU time used in executing the process. Other processes and time the process spends blocked do not count towards this figure.
+
+Sys is the amount of CPU time spent in the kernel within the process. This means executing CPU time spent in system calls within the kernel, as opposed to library code, which is still running in user-space. Like 'user', this is only CPU time used by the process. See below for a brief description of kernel mode (also known as 'supervisor' mode) and the system call mechanism.
+
+
+
+PARALLEL:
+top10M:
+15 nodes: 1mins,  2sec +        57sec =  1mins, 59sec
+10 nodes: 1mins, 18sec + 1mins, 20sec =  2mins, 38sec
+ 5 nodes: 2mins,  7sec + 2mins,  5sec =  4mins, 12sec
+ 1 node : 8mins, 19sec + 8mins, 43sec = 17mins,  2sec
+
+
+top100M:
+15 nodes: 
+10 nodes: 1mins, 21sec +  1mins, 34sec =  2mins, 55sec
+ 5 nodes: 2mins, 11sec +  2mins, 33sec =  4mins, 44sec
+ 1 node : 8mins, 13sec + 11mins, 14sec = 19mins, 27sec
+
+
+
